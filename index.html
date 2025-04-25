@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descarga nuestra App</title>
+    <script>
+        // Detecta el sistema operativo del usuario
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        
+        // Redirige a Android (Google Play)
+        if (/android/i.test(userAgent)) {
+            window.location.replace("https://play.google.com/store/apps/details?id=com.nishi.eventosiimp");
+        }
+        // Redirige a iOS (App Store)
+        else if (/iPad|iPhone|iPod/i.test(userAgent)) {
+            window.location.replace("https://apps.apple.com/pe/app/eventosiimp/id6744048542");
+        }
+        // Si no es móvil, muestra opciones manuales
+        else {
+            document.body.innerHTML = `
+                <h1>Descarga nuestra App</h1>
+                <a href="https://play.google.com/store/apps/details?id=com.nishi.eventosiimp">Descargar para Android</a>
+                <br>
+                <a href="https://apps.apple.com/pe/app/eventosiimp/id6744048542">Descargar para iPhone</a>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <p>Redirigiendo a la tienda de aplicaciones...</p>
+</body>
+</html>
